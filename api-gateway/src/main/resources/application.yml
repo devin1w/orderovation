@@ -1,0 +1,26 @@
+server:
+  port: 5555
+
+spring:
+  application:
+    name: api-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+
+zuul:
+  routes:
+    user:
+      path: /identity/**
+      serviceId: identity-service
+    order:
+      path: /order/**
+      serviceId: order-service
+    organization:
+      path: /organization/**
+      serviceId: organization-service
+    seckill:
+      path: /seckill/**
+      serviceId: seckill-service

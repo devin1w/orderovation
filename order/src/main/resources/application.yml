@@ -1,0 +1,26 @@
+server:
+  port: 9000
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/order_ovation?serverTimezone=GMT%2b8
+    username: DEVIN
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  application:
+    name: order-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+
+#ribbon:
+#  ConnectTimeout: 50000
+#  ReadTimeout: 50000
