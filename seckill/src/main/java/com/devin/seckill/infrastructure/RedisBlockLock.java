@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
  * 单机版
  * @author devin
  */
-@Component
+//@Component
 public class RedisBlockLock implements RedisLock, MessageListener {
 
     private static final int LOCK_TIMEOUT = 800;

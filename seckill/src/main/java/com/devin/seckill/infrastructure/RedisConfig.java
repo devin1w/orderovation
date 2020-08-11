@@ -25,11 +25,11 @@ public class RedisConfig {
         return template;
     }
 
-    @Bean
-    public RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory, RedisBlockLock redisBlockLock) {
-        RedisMessageListenerContainer container = new RedisMessageListenerContainer();
-        container.setConnectionFactory(connectionFactory);
-        container.addMessageListener(redisBlockLock, new PatternTopic("seckill"));
-        return container;
-    }
+//    @Bean
+//    public RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory, RedisBlockLock redisBlockLock) {
+//        RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+//        container.setConnectionFactory(connectionFactory);
+//        container.addMessageListener(redisBlockLock, new PatternTopic("seckill"));
+//        return container;
+//    }
 }

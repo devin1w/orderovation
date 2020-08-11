@@ -10,6 +10,7 @@ import com.devin.seckill.infrastructure.RedisSpinLock;
 import com.devin.seckill.ui.dto.BuyFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
@@ -84,11 +85,12 @@ public class OrderApplicationService {
 //        String customerId = buyFormDTO.getCustomerId();
 //        String id = buyFormDTO.getId();
 //
+//        System.out.println("[Service][" + customerId + "]\tStart");
 //        Commodity commodity = commodityRepository.findById(id).orElseThrow(() -> new BusiException("Commodity[" + id + "] does not exist"));
 //        Integer stock = commodity.getStock();
 //        if (stock <= 0) {
 //            long end = System.currentTimeMillis();
-//            System.out.println("[Sold out]\twhole: " + (end - start) +
+//            System.out.println("[Sold out][" + customerId + "]\twhole: " + (end - start) +
 //                    ",\tprocess: " + (end - start) + ", \t" + System.currentTimeMillis());
 //            throw new BusiException("Goods[" + id + "] are sold out");
 //        }
